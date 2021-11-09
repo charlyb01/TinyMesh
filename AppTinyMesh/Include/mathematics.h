@@ -13,6 +13,8 @@ public:
 
 	static constexpr double DegreeToRadian(double);
 	static constexpr double RadianToDegree(double);
+
+	static constexpr double PI = 3.14159265358979323846;
 };
 
 /*!
@@ -67,7 +69,7 @@ inline double Math::Min(double a, double b, double c)
 */
 inline constexpr double Math::DegreeToRadian(double a)
 {
-	return a * 3.14159265358979323846 / 180.0;
+	return a * PI / 180.0;
 }
 
 /*!
@@ -76,5 +78,5 @@ inline constexpr double Math::DegreeToRadian(double a)
 */
 inline constexpr double Math::RadianToDegree(double a)
 {
-	return a * 180.0 / 3.14159265358979323846;
+	return a * 180.0 / PI;
 }
