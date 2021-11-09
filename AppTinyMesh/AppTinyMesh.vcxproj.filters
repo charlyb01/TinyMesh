@@ -38,6 +38,18 @@
     <ClCompile Include="Source\realtime-moc.cpp">
       <Filter>Interface</Filter>
     </ClCompile>
+    <ClCompile Include="Source\beziersurface.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\revolution.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\bezier.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\mat.cpp">
+      <Filter>Source\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Include\qte.h">
@@ -70,6 +82,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{8b50c486-7a12-4404-bb16-16855aee3d6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\TP">
+      <UniqueIdentifier>{70a3d943-cb6f-41c2-97ab-7d6dd396ff7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\evector.h">
@@ -97,6 +112,21 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="Include\mathematics.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\beziersurface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\revolution.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\bezier.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\mat.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ui-interface.h">
       <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
