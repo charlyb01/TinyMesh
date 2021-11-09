@@ -24,7 +24,7 @@ public:
 	void setDirection(const Vector& d) { direction = d; }
 	
 	void translate(const Vector&);
-	//void rotate(Matrix); // Implement matrix class!
+	void rotate(const Mat4&, const Vector&);
 
 	Box getBox() const;
 	Mesh getMesh(const unsigned, const unsigned) const;

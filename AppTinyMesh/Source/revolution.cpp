@@ -1,5 +1,4 @@
 #include "revolution.h"
-#include "mat.h"
 
 Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d) 
 	: n(_n), origin(o), direction(d)
@@ -36,14 +35,24 @@ Vector Revolution::P(const double u) const
 }
 
 
-
 void Revolution::translate(const Vector& t)
 {
 	unsigned i;
 	for (i = 0; i < n; i++)
 		ctrl.at(i) += t;
 }
-//void Revolution::rotate(Matrix); // Implement matrix class!
+
+void Revolution::rotate(const Mat4& r, const Vector& c)
+{
+	unsigned i;
+	for (i = 0; i < n; i++)
+	{
+		ctrl.at(i) -= c;
+		ctrl.at(i) = r(ctrl.at(i));
+		ctrl.at(i) += c;
+	}
+}
+
 
 Box Revolution::getBox() const
 {

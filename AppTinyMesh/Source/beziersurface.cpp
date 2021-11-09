@@ -49,7 +49,20 @@ void BezierSurface::translate(const Vector& t)
 	}
 }
 
-//void BezierSurface::rotate(Matrix); // Implement matrix class!
+void BezierSurface::rotate(const Mat4& r, const Vector& c)
+{
+	unsigned i, j;
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < m; j++)
+		{
+			ctrl.at(i).at(j) -= c;
+			ctrl.at(i).at(j) = r(ctrl.at(i).at(j));
+			ctrl.at(i).at(j) += c;
+		}
+	}
+}
+
 
 Box BezierSurface::getBox() const
 {

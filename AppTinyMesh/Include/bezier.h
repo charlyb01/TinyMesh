@@ -5,6 +5,7 @@
 #include <random>
 
 #include "evector.h"
+#include "mat.h"
 #include "box.h"
 #include "mesh.h"
 
@@ -20,8 +21,19 @@ public:
 
 	static double B(const double, const unsigned, const unsigned);
 
+	/*
+	* @brief Translate points
+	*
+	* @param t : translation vector
+	*/
 	virtual void translate(const Vector&) = 0;
-	//virtual void rotate(const Matrix&) = 0; // Implement matrix class!
+	/*
+	* @brief Rotate points around a given center
+	*
+	* @param r : rotation matrix
+	* @param c : center of rotation
+	*/
+	virtual void rotate(const Mat4&, const Vector&) = 0;
 
 	virtual Box getBox() const = 0;
 	virtual Mesh getMesh(const unsigned, const unsigned) const = 0;

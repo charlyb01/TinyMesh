@@ -24,7 +24,7 @@ public:
 	Vector P(const double, const double) const;
 
 	void translate(const Vector&);
-	//void rotate(const Matrix&); // Implement matrix class!
+	void rotate(const Mat4&, const Vector&);
 	
 	Box getBox() const;
 	Mesh getMesh(const unsigned, const unsigned) const;
