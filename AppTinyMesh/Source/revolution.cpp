@@ -73,19 +73,16 @@ Box Revolution::getBox() const
 }
 Mesh Revolution::getMesh(const unsigned curveResolution, const unsigned circleResolution) const
 {
+	Mesh mesh;
 	const unsigned curveRes = curveResolution + 1,
 		circleRes = circleResolution + 1;
 	unsigned i, j;
 	const double rotationStep = Math::PI * 2 / circleResolution;
 	Vector p;
 	QVector<Vector> vertices;
-	QVector<Vector> normals;
 	QVector<int> varray;
-	QVector<int> narray;
 	vertices.reserve(curveRes * circleRes);
-	normals.push_back(Vector::Y);
 	varray.reserve(6 * vertices.capacity());
-	narray.reserve(6 * vertices.capacity());
 
 	for (i = 0; i < curveRes; i++)
 	{
@@ -104,13 +101,11 @@ Mesh Revolution::getMesh(const unsigned curveResolution, const unsigned circleRe
 				varray.push_back((i + 1) * curveRes + j);
 				varray.push_back((i + 1) * curveRes + (j + 1));
 				varray.push_back(i * curveRes + (j + 1));
-
-				narray.push_back(0); narray.push_back(0);
-				narray.push_back(0); narray.push_back(0);
-				narray.push_back(0); narray.push_back(0);
 			}
 		}
 	}
 
-	return Mesh(vertices, normals, varray, narray);
+	mesh = Mesh(vertices, varray);
+	mesh.SmoothNormals();
+	return mesh;
 }

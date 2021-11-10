@@ -87,17 +87,14 @@ Box BezierSurface::getBox() const
 
 Mesh BezierSurface::getMesh(const unsigned xResolution, const unsigned yResolution) const
 {
+	Mesh mesh;
 	const unsigned xRes = xResolution + 1, 
 				   yRes = yResolution + 1;
 	unsigned i, j;
 	QVector<Vector> vertices;
-	QVector<Vector> normals;
 	QVector<int> varray;
-	QVector<int> narray;
 	vertices.reserve(xRes * yRes);
-	normals.push_back(Vector::Y);
 	varray.reserve(6 * vertices.capacity());
-	narray.reserve(6 * vertices.capacity());
 
 	for (i = 0; i < xRes; i++)
 	{
@@ -114,13 +111,11 @@ Mesh BezierSurface::getMesh(const unsigned xResolution, const unsigned yResoluti
 				varray.push_back((i + 1) * xRes + j);
 				varray.push_back((i + 1) * xRes + (j + 1));
 				varray.push_back(i * xRes + (j + 1));
-
-				narray.push_back(0); narray.push_back(0);
-				narray.push_back(0); narray.push_back(0);
-				narray.push_back(0); narray.push_back(0);
 			}
 		}
 	}
 
-	return Mesh(vertices, normals, varray, narray);
+	mesh = Mesh(vertices, varray);
+	mesh.SmoothNormals();
+	return mesh;
 }
