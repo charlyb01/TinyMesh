@@ -218,9 +218,9 @@ public:
         revo_thetaRes = new QSpinBox(revo_groupBox_2);
         revo_thetaRes->setObjectName(QString::fromUtf8("revo_thetaRes"));
         revo_thetaRes->setGeometry(QRect(250, 120, 42, 22));
-        revo_thetaRes->setMinimum(1);
-        revo_thetaRes->setMaximum(90);
-        revo_thetaRes->setValue(1);
+        revo_thetaRes->setMinimum(3);
+        revo_thetaRes->setMaximum(100);
+        revo_thetaRes->setValue(3);
         label_13 = new QLabel(revo_groupBox_2);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setGeometry(QRect(90, 120, 16, 21));

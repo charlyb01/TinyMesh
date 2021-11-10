@@ -1,4 +1,6 @@
 #include "qte.h"
+#include "beziersurface.h"
+#include "revolution.h"
 
 MainWindow::MainWindow()
 {
@@ -29,6 +31,12 @@ void MainWindow::CreateActions()
 	connect(uiw.boxMesh, SIGNAL(clicked()), this, SLOT(BoxMeshExample()));
 	connect(uiw.resetcameraButton, SIGNAL(clicked()), this, SLOT(ResetCamera()));
 	connect(uiw.wireframe, SIGNAL(clicked()), this, SLOT(UpdateMaterial()));
+	connect(uiw.bs_genButton, SIGNAL(clicked()), this, SLOT(GenerateBS()));
+	connect(uiw.revo_genButton, SIGNAL(clicked()), this, SLOT(GenerateRevo()));
+
+	// Menu
+	connect(uiw.actionLoad_OBJ, SIGNAL(triggered()), this, SLOT(LoadOBJ()));
+	connect(uiw.actionSave_OBJ, SIGNAL(triggered()), this, SLOT(SaveOBJ()));
 
 	// Widget edition
 	connect(meshWidget, SIGNAL(_signalEditSceneLeft(const Ray&)), this, SLOT(editingSceneLeft(const Ray&)));
@@ -68,4 +76,40 @@ void MainWindow::UpdateMaterial()
 void MainWindow::ResetCamera()
 {
 	meshWidget->SetCamera(Camera(Vector(-10.0), Vector(0.0)));
+}
+
+void MainWindow::LoadOBJ()
+{
+	// TODO: finish ui to open windows to load
+	meshColor = MeshColor();
+	UpdateGeometry();
+}
+
+void MainWindow::SaveOBJ()
+{
+	// TODO: finish ui to open windows to save
+	meshColor.SaveObj("test.obj", "test");
+}
+
+void MainWindow::GenerateBS()
+{
+	BezierSurface b = BezierSurface(uiw.bs_n->value(), uiw.bs_m->value());
+	meshColor = MeshColor(b.getMesh(uiw.bs_nRes->value(), uiw.bs_mRes->value()));
+	UpdateGeometry();
+}
+
+void MainWindow::GenerateRevo()
+{
+	Vector origin = Vector(
+		uiw.revo_xOrigin->value(), 
+		uiw.revo_yOrigin->value(), 
+		uiw.revo_zOrigin->value());
+	Vector direction = Vector(
+		uiw.revo_xDirection->value(), 
+		uiw.revo_yDirection->value(), 
+		uiw.revo_zDirection->value());
+	Revolution r = Revolution(uiw.revo_n->value(), origin, direction);
+
+	meshColor = MeshColor(r.getMesh(uiw.revo_nRes->value(), uiw.revo_thetaRes->value()));
+	UpdateGeometry();
 }

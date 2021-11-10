@@ -26,6 +26,10 @@ public slots:
 	void BoxMeshExample();
 	void ResetCamera();
 	void UpdateMaterial();
+	void LoadOBJ();
+	void SaveOBJ();
+	void GenerateBS();
+	void GenerateRevo();
 };
 
 #endif
