@@ -78,7 +78,7 @@ Mesh Revolution::getMesh(const unsigned curveResolution, const unsigned circleRe
 		circleRes = circleResolution + 1;
 	unsigned i, j;
 	const double rotationStep = Math::PI * 2 / circleResolution;
-	Vector p;
+	Vector pi, pij;
 	QVector<Vector> vertices;
 	QVector<int> varray;
 	vertices.reserve(curveRes * circleRes);
@@ -86,11 +86,11 @@ Mesh Revolution::getMesh(const unsigned curveResolution, const unsigned circleRe
 
 	for (i = 0; i < curveRes; i++)
 	{
+		pi = P(double(i) / curveResolution) - origin;
 		for (j = 0; j < circleRes; j++)
 		{
-			p = P(double(i) / curveResolution) - origin;
-			p = Mat4::Rotation(direction, j * rotationStep)(p) + origin;
-			vertices.push_back(p);
+			pij = Mat4::Rotation(direction, rotationStep * j)(pi) + origin;
+			vertices.push_back(pij);
 
 			if (i < curveResolution && j < circleResolution)
 			{
