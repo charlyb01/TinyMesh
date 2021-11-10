@@ -147,8 +147,8 @@ Mat4 Mat4::RotationZ(const double angle)
 Mat4 Mat4::Rotation(const Vector& axis, const double angle)
 {
     Vector a = Normalized(axis);
-    double s = sin(Math::DegreeToRadian(angle));
-    double c = cos(Math::DegreeToRadian(angle));
+    double s = sin(angle);
+    double c = cos(angle);
 
     return Mat4(
         a[0] * a[0] + (1 - a[0] * a[0]) * c,
