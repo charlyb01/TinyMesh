@@ -108,6 +108,13 @@ void MainWindow::GenerateRevo()
 		uiw.revo_xDirection->value(), 
 		uiw.revo_yDirection->value(), 
 		uiw.revo_zDirection->value());
+
+	if (direction == Vector(0.))
+	{
+		uiw.revo_yDirection->setValue(1.);
+		direction = Vector::Y;
+	}
+
 	Revolution r = Revolution(uiw.revo_n->value(), origin, direction);
 
 	meshColor = MeshColor(r.getMesh(uiw.revo_nRes->value(), uiw.revo_thetaRes->value()));
