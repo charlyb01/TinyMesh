@@ -2,6 +2,19 @@
 
 Vector Bezier::generateRandomPoint(const Vector& origin, std::default_random_engine engine)
 {
+	Vector tmpVector = Vector(0.);
+	std::uniform_real_distribution<double> distr;
+
+	distr = std::uniform_real_distribution<double>(-1.f, 1.f);
+	tmpVector[0] = distr(engine);
+	tmpVector[1] = distr(engine);
+	tmpVector[2] = distr(engine);
+
+	return origin + tmpVector;
+}
+
+Vector Bezier::generateRegularRandomPoint(const Vector& origin, std::default_random_engine engine)
+{
 	double tmpDelta, tmpValue;
 	Vector tmpVector;
 	std::uniform_real_distribution<double> distr;
@@ -25,10 +38,6 @@ Vector Bezier::generateRandomPoint(const Vector& origin, std::default_random_eng
 	return origin + tmpVector;
 }
 
-Vector Bezier::generateRandomPoint(std::default_random_engine engine)
-{
-	return generateRandomPoint(Vector(1.), engine);
-}
 
 /**
 * @brief Evaluate n-degree Bernstein polynom at i for u

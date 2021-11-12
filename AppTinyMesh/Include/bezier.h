@@ -16,8 +16,8 @@
 class Bezier
 {
 public:
-	static Vector generateRandomPoint(std::default_random_engine);
 	static Vector generateRandomPoint(const Vector&, std::default_random_engine);
+	static Vector generateRegularRandomPoint(const Vector&, std::default_random_engine);
 
 	static double B(const double, const unsigned, const unsigned);
 

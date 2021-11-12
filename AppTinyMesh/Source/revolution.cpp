@@ -11,7 +11,7 @@ Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d)
 	ctrl.reserve(n);
 	for (i = 0; i < n; i++)
 	{
-		p = generateRandomPoint(p, engine);
+		p = generateRegularRandomPoint(p, engine);
 		ctrl.push_back(p);
 	}
 }

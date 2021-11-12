@@ -5,6 +5,7 @@ BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength)
 	: n(xLength), m(yLength)
 {
 	unsigned i, j;
+	Vector p = Vector(1.);
 	std::random_device rd;
 	std::default_random_engine engine = std::default_random_engine(rd());
 
@@ -13,8 +14,17 @@ BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength)
 	{
 		ctrl.push_back(std::vector<Vector>());
 		ctrl.at(i).reserve(m);
-		for (j = 0; j < m; j++)
-			ctrl.at(i).push_back(generateRandomPoint(engine));
+
+		if (i > 0)
+			p = generateRandomPoint(ctrl.at(i-1).at(0), engine);
+		
+		ctrl.at(i).push_back(p);
+
+		for (j = 1; j < m; j++)
+		{
+			p = generateRegularRandomPoint(p, engine);
+			ctrl.at(i).push_back(p);
+		}
 	}
 }
 
