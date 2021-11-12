@@ -94,13 +94,13 @@ Mesh Revolution::getMesh(const unsigned curveResolution, const unsigned circleRe
 
 			if (i < curveResolution && j < circleResolution)
 			{
-				varray.push_back(i * curveRes + j);
-				varray.push_back((i + 1) * curveRes + j);
-				varray.push_back(i * curveRes + (j + 1));
+				varray.push_back(i * circleRes + j);
+				varray.push_back((i + 1) * circleRes + j);
+				varray.push_back(i * circleRes + (j + 1));
 
-				varray.push_back((i + 1) * curveRes + j);
-				varray.push_back((i + 1) * curveRes + (j + 1));
-				varray.push_back(i * curveRes + (j + 1));
+				varray.push_back((i + 1) * circleRes + j);
+				varray.push_back((i + 1) * circleRes + (j + 1));
+				varray.push_back(i * circleRes + (j + 1));
 			}
 		}
 	}

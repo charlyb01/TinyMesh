@@ -104,13 +104,13 @@ Mesh BezierSurface::getMesh(const unsigned xResolution, const unsigned yResoluti
 
 			if (i < xResolution && j < yResolution)
 			{
-				varray.push_back(i * xRes + j);
-				varray.push_back((i + 1) * xRes + j);
-				varray.push_back(i * xRes + (j + 1));
+				varray.push_back(i * yRes + j);
+				varray.push_back((i + 1) * yRes + j);
+				varray.push_back(i * yRes + (j + 1));
 			
-				varray.push_back((i + 1) * xRes + j);
-				varray.push_back((i + 1) * xRes + (j + 1));
-				varray.push_back(i * xRes + (j + 1));
+				varray.push_back((i + 1) * yRes + j);
+				varray.push_back((i + 1) * yRes + (j + 1));
+				varray.push_back(i * yRes + (j + 1));
 			}
 		}
 	}
