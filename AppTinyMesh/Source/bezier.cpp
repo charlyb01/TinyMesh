@@ -27,7 +27,7 @@ Vector Bezier::generateRandomPoint(const Vector& origin, std::default_random_eng
 
 Vector Bezier::generateRandomPoint(std::default_random_engine engine)
 {
-	return generateRandomPoint(Vector(0.), engine);
+	return generateRandomPoint(Vector(1.), engine);
 }
 
 /**

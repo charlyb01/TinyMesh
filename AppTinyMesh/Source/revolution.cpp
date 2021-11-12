@@ -4,7 +4,7 @@ Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d)
 	: n(_n), origin(o), direction(d)
 {
 	unsigned i;
-	Vector p = Vector(0.);
+	Vector p = Vector(1.);
 	std::random_device rd;
 	std::default_random_engine engine = std::default_random_engine(rd());
 
