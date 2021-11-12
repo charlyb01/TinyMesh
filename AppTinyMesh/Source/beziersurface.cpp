@@ -28,11 +28,13 @@ BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength)
 Vector BezierSurface::P(const double u, const double v) const
 {
 	unsigned i, j;
+	const unsigned n1 = n - 1;
+	const unsigned m1 = m - 1;
 	Vector bezier = Vector(0.0);
 	for (i = 0; i < n; i++)
 	{
 		for (j = 0; j < m; j++)
-			bezier += ctrl.at(i).at(j) *B(u, i, n)* B(v, j, m);
+			bezier += ctrl.at(i).at(j) *B(u, i, n1)* B(v, j, m1);
 	}
 
 	return bezier;

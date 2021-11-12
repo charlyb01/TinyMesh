@@ -25,10 +25,11 @@ Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d)
 Vector Revolution::P(const double u) const
 {
 	unsigned i;
+	const unsigned n1 = n - 1;
 	Vector bezier = Vector(0.0);
 	for (i = 0; i < n; i++)
 	{
-			bezier += ctrl.at(i) * B(u, i, n);
+			bezier += ctrl.at(i) * B(u, i, n1);
 	}
 
 	return bezier;
