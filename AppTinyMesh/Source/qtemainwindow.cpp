@@ -1,6 +1,4 @@
 #include "qte.h"
-#include "beziersurface.h"
-#include "revolution.h"
 
 MainWindow::MainWindow()
 {
@@ -33,6 +31,8 @@ void MainWindow::CreateActions()
 	connect(uiw.wireframe, SIGNAL(clicked()), this, SLOT(UpdateMaterial()));
 	connect(uiw.bs_genButton, SIGNAL(clicked()), this, SLOT(GenerateBS()));
 	connect(uiw.revo_genButton, SIGNAL(clicked()), this, SLOT(GenerateRevo()));
+	connect(uiw.bs_renderButton, SIGNAL(clicked()), this, SLOT(RenderBS()));
+	connect(uiw.revo_renderButton, SIGNAL(clicked()), this, SLOT(RenderRevo()));
 
 	// Menu
 	connect(uiw.actionLoad_OBJ, SIGNAL(triggered()), this, SLOT(LoadOBJ()));
@@ -93,9 +93,8 @@ void MainWindow::SaveOBJ()
 
 void MainWindow::GenerateBS()
 {
-	BezierSurface b = BezierSurface(uiw.bs_n->value(), uiw.bs_m->value());
-	meshColor = MeshColor(b.getMesh(uiw.bs_nRes->value(), uiw.bs_mRes->value()));
-	UpdateGeometry();
+	bs = BezierSurface(uiw.bs_n->value(), uiw.bs_m->value());
+	RenderBS();
 }
 
 void MainWindow::GenerateRevo()
@@ -115,8 +114,27 @@ void MainWindow::GenerateRevo()
 		direction = Vector::Y;
 	}
 
-	Revolution r = Revolution(uiw.revo_n->value(), origin, direction);
+	revo = Revolution(uiw.revo_n->value(), origin, direction);
+	RenderRevo();
+}
 
-	meshColor = MeshColor(r.getMesh(uiw.revo_nRes->value(), uiw.revo_thetaRes->value()));
+void MainWindow::RenderBS()
+{
+	if (uiw.bs_nRes->value() < uiw.bs_n->value())
+		uiw.bs_nRes->setValue(uiw.bs_n->value());
+
+	if (uiw.bs_mRes->value() < uiw.bs_m->value())
+		uiw.bs_mRes->setValue(uiw.bs_m->value());
+
+	meshColor = MeshColor(bs.getMesh(uiw.bs_nRes->value(), uiw.bs_mRes->value()));
+	UpdateGeometry();
+}
+
+void MainWindow::RenderRevo()
+{
+	if (uiw.revo_nRes->value() < uiw.revo_n->value())
+		uiw.revo_nRes->setValue(uiw.revo_n->value());
+
+	meshColor = MeshColor(revo.getMesh(uiw.revo_nRes->value(), uiw.revo_thetaRes->value()));
 	UpdateGeometry();
 }

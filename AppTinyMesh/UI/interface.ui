@@ -61,8 +61,8 @@
         <rect>
          <x>10</x>
          <y>60</y>
-         <width>311</width>
-         <height>141</height>
+         <width>321</width>
+         <height>211</height>
         </rect>
        </property>
        <property name="title">
@@ -71,7 +71,7 @@
        <widget class="QSpinBox" name="bs_n">
         <property name="geometry">
          <rect>
-          <x>180</x>
+          <x>190</x>
           <y>30</y>
           <width>42</width>
           <height>22</height>
@@ -81,13 +81,13 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <number>42</number>
+         <number>13</number>
         </property>
        </widget>
        <widget class="QSpinBox" name="bs_m">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>260</x>
           <y>30</y>
           <width>42</width>
           <height>22</height>
@@ -97,7 +97,7 @@
          <number>2</number>
         </property>
         <property name="maximum">
-         <number>42</number>
+         <number>13</number>
         </property>
        </widget>
        <widget class="QLabel" name="label">
@@ -116,7 +116,7 @@
        <widget class="QLabel" name="label_4">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>170</x>
           <y>30</y>
           <width>16</width>
           <height>21</height>
@@ -129,7 +129,7 @@
        <widget class="QLabel" name="label_5">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>30</y>
           <width>16</width>
           <height>21</height>
@@ -143,7 +143,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>60</y>
+          <y>130</y>
           <width>141</width>
           <height>21</height>
          </rect>
@@ -155,8 +155,8 @@
        <widget class="QSpinBox" name="bs_nRes">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>60</y>
+          <x>190</x>
+          <y>130</y>
           <width>42</width>
           <height>22</height>
          </rect>
@@ -171,8 +171,8 @@
        <widget class="QSpinBox" name="bs_mRes">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>60</y>
+          <x>260</x>
+          <y>130</y>
           <width>42</width>
           <height>22</height>
          </rect>
@@ -187,8 +187,8 @@
        <widget class="QLabel" name="label_7">
         <property name="geometry">
          <rect>
-          <x>160</x>
-          <y>60</y>
+          <x>170</x>
+          <y>130</y>
           <width>16</width>
           <height>21</height>
          </rect>
@@ -200,8 +200,8 @@
        <widget class="QLabel" name="label_8">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>60</y>
+          <x>240</x>
+          <y>130</y>
           <width>16</width>
           <height>21</height>
          </rect>
@@ -210,17 +210,43 @@
          <string>M</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="bs_renderButton">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>170</y>
+          <width>80</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Render</string>
+        </property>
+       </widget>
        <widget class="QPushButton" name="bs_genButton">
         <property name="geometry">
          <rect>
-          <x>210</x>
-          <y>100</y>
+          <x>220</x>
+          <y>70</y>
           <width>80</width>
           <height>22</height>
          </rect>
         </property>
         <property name="text">
          <string>Generate</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>100</y>
+          <width>301</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </widget>
@@ -280,9 +306,9 @@ p, li { white-space: pre-wrap; }
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>220</y>
-         <width>311</width>
-         <height>201</height>
+         <y>290</y>
+         <width>321</width>
+         <height>271</height>
         </rect>
        </property>
        <property name="title">
@@ -291,7 +317,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QSpinBox" name="revo_n">
         <property name="geometry">
          <rect>
-          <x>250</x>
+          <x>260</x>
           <y>30</y>
           <width>42</width>
           <height>22</height>
@@ -301,7 +327,7 @@ p, li { white-space: pre-wrap; }
          <number>2</number>
         </property>
         <property name="maximum">
-         <number>42</number>
+         <number>13</number>
         </property>
        </widget>
        <widget class="QLabel" name="label_9">
@@ -320,7 +346,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_11">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>30</y>
           <width>16</width>
           <height>21</height>
@@ -334,7 +360,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>120</y>
+          <y>190</y>
           <width>81</width>
           <height>21</height>
          </rect>
@@ -346,8 +372,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QSpinBox" name="revo_nRes">
         <property name="geometry">
          <rect>
-          <x>110</x>
-          <y>120</y>
+          <x>120</x>
+          <y>190</y>
           <width>42</width>
           <height>22</height>
          </rect>
@@ -362,8 +388,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QSpinBox" name="revo_thetaRes">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>120</y>
+          <x>260</x>
+          <y>190</y>
           <width>42</width>
           <height>22</height>
          </rect>
@@ -381,8 +407,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_13">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>120</y>
+          <x>100</x>
+          <y>190</y>
           <width>16</width>
           <height>21</height>
          </rect>
@@ -394,8 +420,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_14">
         <property name="geometry">
          <rect>
-          <x>215</x>
-          <y>120</y>
+          <x>225</x>
+          <y>190</y>
           <width>31</width>
           <height>21</height>
          </rect>
@@ -404,17 +430,17 @@ p, li { white-space: pre-wrap; }
          <string>Theta</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="revo_genButton">
+       <widget class="QPushButton" name="revo_renderButton">
         <property name="geometry">
          <rect>
-          <x>210</x>
-          <y>160</y>
+          <x>220</x>
+          <y>230</y>
           <width>80</width>
           <height>22</height>
          </rect>
         </property>
         <property name="text">
-         <string>Generate</string>
+         <string>Render</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_15">
@@ -433,7 +459,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_zOrigin">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>250</x>
           <y>60</y>
           <width>51</width>
           <height>22</height>
@@ -449,7 +475,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_yOrigin">
         <property name="geometry">
          <rect>
-          <x>170</x>
+          <x>180</x>
           <y>60</y>
           <width>51</width>
           <height>22</height>
@@ -465,7 +491,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_xOrigin">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>110</x>
           <y>60</y>
           <width>51</width>
           <height>22</height>
@@ -481,7 +507,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_16">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>60</y>
           <width>16</width>
           <height>21</height>
@@ -494,7 +520,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_17">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>170</x>
           <y>60</y>
           <width>16</width>
           <height>21</height>
@@ -507,7 +533,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_18">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>60</y>
           <width>16</width>
           <height>21</height>
@@ -533,7 +559,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_zDirection">
         <property name="geometry">
          <rect>
-          <x>240</x>
+          <x>250</x>
           <y>90</y>
           <width>51</width>
           <height>22</height>
@@ -549,7 +575,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_20">
         <property name="geometry">
          <rect>
-          <x>230</x>
+          <x>240</x>
           <y>90</y>
           <width>16</width>
           <height>21</height>
@@ -562,7 +588,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_21">
         <property name="geometry">
          <rect>
-          <x>160</x>
+          <x>170</x>
           <y>90</y>
           <width>16</width>
           <height>21</height>
@@ -575,7 +601,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_yDirection">
         <property name="geometry">
          <rect>
-          <x>170</x>
+          <x>180</x>
           <y>90</y>
           <width>51</width>
           <height>22</height>
@@ -591,7 +617,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QDoubleSpinBox" name="revo_xDirection">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>110</x>
           <y>90</y>
           <width>51</width>
           <height>22</height>
@@ -607,7 +633,7 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_22">
         <property name="geometry">
          <rect>
-          <x>90</x>
+          <x>100</x>
           <y>90</y>
           <width>16</width>
           <height>21</height>
@@ -615,6 +641,32 @@ p, li { white-space: pre-wrap; }
         </property>
         <property name="text">
          <string>X</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="revo_genButton">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>130</y>
+          <width>80</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Generate</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>301</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
         </property>
        </widget>
       </widget>

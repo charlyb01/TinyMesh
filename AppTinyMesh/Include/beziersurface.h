@@ -19,7 +19,7 @@ private:
 	std::vector<std::vector<Vector>> ctrl;	///< Control points
 
 public:
-	BezierSurface(const unsigned, const unsigned);
+	BezierSurface(const unsigned xLength = 2, const unsigned yLength = 2);
 
 	Vector P(const double, const double) const;
 

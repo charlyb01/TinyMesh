@@ -4,6 +4,8 @@
 #include "ui-interface.h"
 #include "realtime.h"
 #include "meshcolor.h"
+#include "beziersurface.h"
+#include "revolution.h"
 
 class MainWindow : public QMainWindow
 {
@@ -13,6 +15,9 @@ private:
 
 	MeshWidget* meshWidget;		//!< Viewer
 	MeshColor meshColor;		//!< Mesh.
+
+	BezierSurface bs;			//!< Bezier surface
+	Revolution revo;			//!< Bezier revolution surface
 
 public:
 	MainWindow();
@@ -30,6 +35,8 @@ public slots:
 	void SaveOBJ();
 	void GenerateBS();
 	void GenerateRevo();
+	void RenderBS();
+	void RenderRevo();
 };
 
 #endif
