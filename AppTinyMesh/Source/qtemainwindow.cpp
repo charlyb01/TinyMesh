@@ -1,6 +1,7 @@
 #include "qte.h"
 #include "twist.h"
 #include "localtwist.h"
+#include "localtranslation.h"
 
 MainWindow::MainWindow()
 {
@@ -37,6 +38,7 @@ void MainWindow::CreateActions()
 	connect(uiw.revo_renderButton, SIGNAL(clicked()), this, SLOT(RenderRevo()));
 	connect(uiw.twist_globalButton, SIGNAL(clicked()), this, SLOT(DoGlobalTwist()));
 	connect(uiw.twist_localButton, SIGNAL(clicked()), this, SLOT(DoLocalTwist()));
+	connect(uiw.tr_localButton, SIGNAL(clicked()), this, SLOT(DoLocalTranslation()));
 
 	// Menu
 	connect(uiw.actionLoad_OBJ, SIGNAL(triggered()), this, SLOT(LoadOBJ()));
@@ -186,6 +188,25 @@ void MainWindow::DoLocalTwist()
 
 	LocalTwist lt = LocalTwist(origin, uiw.twist_r1->value(), uiw.twist_r2->value(),
 		uiw.twist_period->value(), direction);
+	meshColor = MeshColor(lt.warpMesh(meshColor));
+	UpdateGeometry();
+}
+
+void MainWindow::DoLocalTranslation()
+{
+	Vector origin = Vector(
+		uiw.tr_xOrigin->value(),
+		uiw.tr_yOrigin->value(),
+		uiw.tr_zOrigin->value());
+	Vector t = Vector(
+		uiw.tr_x->value(),
+		uiw.tr_y->value(),
+		uiw.tr_z->value());
+
+	if (uiw.tr_r2->value() < uiw.tr_r1->value())
+		uiw.tr_r2->setValue(uiw.tr_r1->value());
+
+	LocalTranslation lt = LocalTranslation(origin, uiw.tr_r1->value(), uiw.tr_r2->value(), t);
 	meshColor = MeshColor(lt.warpMesh(meshColor));
 	UpdateGeometry();
 }

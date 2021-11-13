@@ -39,6 +39,7 @@ public slots:
 	void RenderRevo();
 	void DoGlobalTwist();
 	void DoLocalTwist();
+	void DoLocalTranslation();
 };
 
 #endif
