@@ -1,4 +1,5 @@
 #include "qte.h"
+#include "twist.h"
 
 MainWindow::MainWindow()
 {
@@ -33,6 +34,7 @@ void MainWindow::CreateActions()
 	connect(uiw.revo_genButton, SIGNAL(clicked()), this, SLOT(GenerateRevo()));
 	connect(uiw.bs_renderButton, SIGNAL(clicked()), this, SLOT(RenderBS()));
 	connect(uiw.revo_renderButton, SIGNAL(clicked()), this, SLOT(RenderRevo()));
+	connect(uiw.twist_button, SIGNAL(clicked()), this, SLOT(DoTwist()));
 
 	// Menu
 	connect(uiw.actionLoad_OBJ, SIGNAL(triggered()), this, SLOT(LoadOBJ()));
@@ -136,5 +138,27 @@ void MainWindow::RenderRevo()
 		uiw.revo_nRes->setValue(uiw.revo_n->value());
 
 	meshColor = MeshColor(revo.getMesh(uiw.revo_nRes->value(), uiw.revo_thetaRes->value()));
+	UpdateGeometry();
+}
+
+void MainWindow::DoTwist()
+{
+	Vector origin = Vector(
+		uiw.twist_xOrigin->value(),
+		uiw.twist_yOrigin->value(),
+		uiw.twist_zOrigin->value());
+	Vector direction = Vector(
+		uiw.twist_xDirection->value(),
+		uiw.twist_yDirection->value(),
+		uiw.twist_zDirection->value());
+
+	if (direction == Vector(0.))
+	{
+		uiw.twist_yDirection->setValue(1.);
+		direction = Vector::Y;
+	}
+
+	Twist t = Twist(uiw.twist_period->value(), origin, direction);
+	meshColor = MeshColor(t.warpMesh(meshColor));
 	UpdateGeometry();
 }

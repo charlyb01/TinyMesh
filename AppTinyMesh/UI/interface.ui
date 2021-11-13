@@ -670,6 +670,274 @@ p, li { white-space: pre-wrap; }
         </property>
        </widget>
       </widget>
+      <widget class="QGroupBox" name="revo_groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>580</y>
+         <width>321</width>
+         <height>271</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Warping</string>
+       </property>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Period length</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_27">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Axis origin</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_zOrigin">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>60</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_yOrigin">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>60</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_xOrigin">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>60</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_28">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>60</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Z</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_29">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>60</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_30">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>60</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_31">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Axis direction</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_zDirection">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>90</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_32">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>90</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Z</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_33">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>90</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Y</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_yDirection">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>90</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_xDirection">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>90</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_34">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>90</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>X</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="twist_button">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>130</y>
+          <width>80</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Twist</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>301</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="twist_period">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>30</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>100.000000000000000</double>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
     <item>
