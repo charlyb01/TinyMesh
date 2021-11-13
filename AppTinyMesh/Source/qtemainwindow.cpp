@@ -1,5 +1,6 @@
 #include "qte.h"
 #include "twist.h"
+#include "localtwist.h"
 
 MainWindow::MainWindow()
 {
@@ -34,7 +35,8 @@ void MainWindow::CreateActions()
 	connect(uiw.revo_genButton, SIGNAL(clicked()), this, SLOT(GenerateRevo()));
 	connect(uiw.bs_renderButton, SIGNAL(clicked()), this, SLOT(RenderBS()));
 	connect(uiw.revo_renderButton, SIGNAL(clicked()), this, SLOT(RenderRevo()));
-	connect(uiw.twist_button, SIGNAL(clicked()), this, SLOT(DoTwist()));
+	connect(uiw.twist_globalButton, SIGNAL(clicked()), this, SLOT(DoGlobalTwist()));
+	connect(uiw.twist_localButton, SIGNAL(clicked()), this, SLOT(DoLocalTwist()));
 
 	// Menu
 	connect(uiw.actionLoad_OBJ, SIGNAL(triggered()), this, SLOT(LoadOBJ()));
@@ -141,7 +143,7 @@ void MainWindow::RenderRevo()
 	UpdateGeometry();
 }
 
-void MainWindow::DoTwist()
+void MainWindow::DoGlobalTwist()
 {
 	Vector origin = Vector(
 		uiw.twist_xOrigin->value(),
@@ -160,5 +162,30 @@ void MainWindow::DoTwist()
 
 	Twist t = Twist(uiw.twist_period->value(), origin, direction);
 	meshColor = MeshColor(t.warpMesh(meshColor));
+	UpdateGeometry();
+}
+
+void MainWindow::DoLocalTwist()
+{
+	Vector origin = Vector(
+		uiw.twist_xOrigin->value(),
+		uiw.twist_yOrigin->value(),
+		uiw.twist_zOrigin->value());
+	Vector direction = Vector(
+		uiw.twist_xDirection->value(),
+		uiw.twist_yDirection->value(),
+		uiw.twist_zDirection->value());
+
+	if (direction == Vector(0.))
+	{
+		uiw.twist_yDirection->setValue(1.);
+		direction = Vector::Y;
+	}
+	if (uiw.twist_r2->value() < uiw.twist_r1->value())
+		uiw.twist_r2->setValue(uiw.twist_r1->value());
+
+	LocalTwist lt = LocalTwist(origin, uiw.twist_r1->value(), uiw.twist_r2->value(),
+		uiw.twist_period->value(), direction);
+	meshColor = MeshColor(lt.warpMesh(meshColor));
 	UpdateGeometry();
 }

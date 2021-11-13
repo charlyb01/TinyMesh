@@ -37,7 +37,8 @@ public slots:
 	void GenerateRevo();
 	void RenderBS();
 	void RenderRevo();
-	void DoTwist();
+	void DoGlobalTwist();
+	void DoLocalTwist();
 };
 
 #endif
