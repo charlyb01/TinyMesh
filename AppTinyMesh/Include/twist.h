@@ -7,7 +7,7 @@
 * @class Twist Include/twist.h
 * @brief Twist warping of a mesh
 */
-class Twist
+class Twist : public Warping
 {
 private:
 	Vector origin;							///< Axis origin
