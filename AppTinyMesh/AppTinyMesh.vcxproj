@@ -103,6 +103,7 @@
     <ClCompile Include="Source\box.cpp" />
     <ClCompile Include="Source\camera.cpp" />
     <ClCompile Include="Source\evector.cpp" />
+    <ClCompile Include="Source\localtranslation.cpp" />
     <ClCompile Include="Source\localtwist.cpp" />
     <ClCompile Include="Source\localwarping.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Include\camera.h" />
     <ClInclude Include="Include\color.h" />
     <ClInclude Include="Include\evector.h" />
+    <ClInclude Include="Include\localtranslation.h" />
     <ClInclude Include="Include\localtwist.h" />
     <ClInclude Include="Include\localwarping.h" />
     <ClInclude Include="Include\mat.h" />

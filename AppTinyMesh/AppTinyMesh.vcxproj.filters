@@ -59,6 +59,9 @@
     <ClCompile Include="Source\localtwist.cpp">
       <Filter>Source\TP</Filter>
     </ClCompile>
+    <ClCompile Include="Source\localtranslation.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Include\qte.h">
@@ -148,6 +151,9 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="Include\localtwist.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\localtranslation.h">
       <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
