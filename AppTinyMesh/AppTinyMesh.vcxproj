@@ -115,6 +115,7 @@
     <ClCompile Include="Source\revolution.cpp" />
     <ClCompile Include="Source\shader-api.cpp" />
     <ClCompile Include="Source\triangle.cpp" />
+    <ClCompile Include="Source\twist.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Include\qte.h">
@@ -168,7 +169,9 @@
     <ClInclude Include="Include\ray.h" />
     <ClInclude Include="Include\revolution.h" />
     <ClInclude Include="Include\shader-api.h" />
+    <ClInclude Include="Include\twist.h" />
     <ClInclude Include="Include\ui-interface.h" />
+    <ClInclude Include="Include\warping.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\mesh.glsl" />

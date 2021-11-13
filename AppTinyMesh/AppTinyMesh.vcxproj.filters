@@ -50,6 +50,9 @@
     <ClCompile Include="Source\mat.cpp">
       <Filter>Source\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Source\twist.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Include\qte.h">
@@ -127,6 +130,12 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="Include\ui-interface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\twist.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\warping.h">
       <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
