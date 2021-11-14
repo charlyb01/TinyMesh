@@ -1,7 +1,8 @@
 #include "beziersurface.h"
 
 
-BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength)
+BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength,
+	const bool xLiberty, const bool yLiberty)
 	: n(xLength), m(yLength)
 {
 	unsigned i, j;
@@ -16,13 +17,13 @@ BezierSurface::BezierSurface(const unsigned xLength, const unsigned yLength)
 		ctrl.at(i).reserve(m);
 
 		if (i > 0)
-			p = generateRandomPoint(ctrl.at(i-1).at(0), engine);
+			p = generateRegularRandomPoint(ctrl.at(i-1).at(0), engine, xLiberty);
 		
 		ctrl.at(i).push_back(p);
 
 		for (j = 1; j < m; j++)
 		{
-			p = generateRegularRandomPoint(p, engine);
+			p = generateRegularRandomPoint(p, engine, yLiberty);
 			ctrl.at(i).push_back(p);
 		}
 	}

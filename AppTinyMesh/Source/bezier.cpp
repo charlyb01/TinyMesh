@@ -1,19 +1,8 @@
 #include "bezier.h"
 
-Vector Bezier::generateRandomPoint(const Vector& origin, std::default_random_engine engine)
-{
-	Vector tmpVector = Vector(0.);
-	std::uniform_real_distribution<double> distr;
 
-	distr = std::uniform_real_distribution<double>(-1.f, 1.f);
-	tmpVector[0] = distr(engine);
-	tmpVector[1] = distr(engine);
-	tmpVector[2] = distr(engine);
-
-	return origin + tmpVector;
-}
-
-Vector Bezier::generateRegularRandomPoint(const Vector& origin, std::default_random_engine engine)
+Vector Bezier::generateRegularRandomPoint(const Vector& origin, std::default_random_engine engine,
+	const bool negative)
 {
 	double tmpDelta, tmpValue;
 	Vector tmpVector;
@@ -22,18 +11,42 @@ Vector Bezier::generateRegularRandomPoint(const Vector& origin, std::default_ran
 	std::random_shuffle(order.begin(), order.end());
 
 	tmpVector = Vector(0.);
-	tmpDelta = 1;
-	distr = std::uniform_real_distribution<double>(0.0f, tmpDelta);
+	tmpDelta = 1.;
+	distr = std::uniform_real_distribution<double>(-tmpDelta, tmpDelta);
 	tmpValue = distr(engine);
-	tmpVector[order[0]] = std::sqrt(tmpValue);
+	if (tmpValue < 0.)
+	{
+		if (negative)
+			tmpVector[order[0]] = -std::sqrt(-tmpValue);
+		else
+			tmpVector[order[0]] = std::sqrt(-tmpValue);
+	}
+	else
+		tmpVector[order[0]] = std::sqrt(tmpValue);
 
-	tmpDelta -= tmpValue;
-	distr = std::uniform_real_distribution<double>(0.0f, tmpDelta);
+	tmpDelta -= std::abs(tmpValue);
+	distr = std::uniform_real_distribution<double>(-tmpDelta, tmpDelta);
 	tmpValue = distr(engine);
-	tmpVector[order[1]] = std::sqrt(tmpValue);
+	if (tmpValue < 0.)
+	{
+		if (negative)
+			tmpVector[order[1]] = -std::sqrt(-tmpValue);
+		else
+			tmpVector[order[1]] = std::sqrt(-tmpValue);
+	}
+	else
+		tmpVector[order[1]] = std::sqrt(tmpValue);
 
-	tmpDelta -= tmpValue;
-	tmpVector[order[2]] = std::sqrt(tmpDelta);
+	tmpDelta -= std::abs(tmpValue);
+	if (tmpValue < 0.)
+	{
+		if (negative)
+			tmpVector[order[2]] = -std::sqrt(-tmpValue);
+		else
+			tmpVector[order[2]] = std::sqrt(-tmpValue);
+	}
+	else
+		tmpVector[order[2]] = std::sqrt(tmpValue);
 
 	return origin + tmpVector;
 }

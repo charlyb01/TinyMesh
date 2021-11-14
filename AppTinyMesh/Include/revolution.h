@@ -16,7 +16,8 @@ private:
 	Vector direction;						///< Axis direction
 
 public:
-	Revolution(const unsigned _n = 2, const Vector& o = Vector(0.), const Vector& d = Vector::Y);
+	Revolution(const unsigned _n = 2, const Vector& o = Vector(0.), const Vector& d = Vector::Y,
+		const bool liberty = false);
 
 	Vector P(const double) const;
 

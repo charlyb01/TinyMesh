@@ -1,6 +1,6 @@
 #include "revolution.h"
 
-Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d) 
+Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d, const bool liberty)
 	: n(_n), origin(o), direction(d)
 {
 	unsigned i;
@@ -11,7 +11,7 @@ Revolution::Revolution(const unsigned _n, const Vector& o, const Vector& d)
 	ctrl.reserve(n);
 	for (i = 0; i < n; i++)
 	{
-		p = generateRegularRandomPoint(p, engine);
+		p = generateRegularRandomPoint(p, engine, liberty);
 		ctrl.push_back(p);
 	}
 }
