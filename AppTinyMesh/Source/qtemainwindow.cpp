@@ -99,7 +99,8 @@ void MainWindow::SaveOBJ()
 
 void MainWindow::GenerateBS()
 {
-	bs = BezierSurface(uiw.bs_n->value(), uiw.bs_m->value());
+	bs = BezierSurface(uiw.bs_n->value(), uiw.bs_m->value(),
+		uiw.bs_negativeN->isChecked(), uiw.bs_negativeM->isChecked());
 	RenderBS();
 }
 
@@ -120,7 +121,7 @@ void MainWindow::GenerateRevo()
 		direction = Vector::Y;
 	}
 
-	revo = Revolution(uiw.revo_n->value(), origin, direction);
+	revo = Revolution(uiw.revo_n->value(), origin, direction, uiw.revo_negative->isChecked());
 	RenderRevo();
 }
 
