@@ -61,5 +61,15 @@ Vector Bezier::generateRegularRandomPoint(const Vector& origin, std::default_ran
 */
 double Bezier::B(const double u, const unsigned i, const unsigned n)
 {
-	return Cnp[n][i] * pow(u, i) * pow(1 - u, n - i);
+	const unsigned _i = n - i;
+	const double _u = 1.0 - u;
+	unsigned j;
+	double a = 1.0, b = 1.0;
+
+	for (j = 0; j < i; j++)
+		a *= u;
+	for (j = 0; j < _i; j++)
+		b *= _u;
+
+	return Cnp[n][i] * a * b;
 }
