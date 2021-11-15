@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'interface.ui'
 **
-** Created by: Qt User Interface Compiler version 5.13.2
+** Created by: Qt User Interface Compiler version 5.12.11
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -172,42 +172,42 @@ public:
 
     void retranslateUi(QMainWindow *Assets)
     {
-        Assets->setWindowTitle(QCoreApplication::translate("Assets", "Implicit Terrain", nullptr));
-        actionExit->setText(QCoreApplication::translate("Assets", "Exit", nullptr));
-#if QT_CONFIG(shortcut)
-        actionExit->setShortcut(QCoreApplication::translate("Assets", "Esc", nullptr));
-#endif // QT_CONFIG(shortcut)
-        actionNew_Scene->setText(QCoreApplication::translate("Assets", "New Scene", nullptr));
-        actionExport_obj->setText(QCoreApplication::translate("Assets", "OBJ File (.obj)", nullptr));
-        actionExport_ma->setText(QCoreApplication::translate("Assets", "Maya File (.ma)", nullptr));
-        actionLoad_ma->setText(QCoreApplication::translate("Assets", "Load", nullptr));
-        actionGL->setText(QCoreApplication::translate("Assets", "GL", nullptr));
-        actionVectorized->setText(QCoreApplication::translate("Assets", "Vectorized", nullptr));
-        actionExport_svg->setText(QCoreApplication::translate("Assets", "SVG File (.svg)", nullptr));
-        actionSphere_Tracing_png->setText(QCoreApplication::translate("Assets", "Sphere Tracing (.png)", nullptr));
+        Assets->setWindowTitle(QApplication::translate("Assets", "Implicit Terrain", nullptr));
+        actionExit->setText(QApplication::translate("Assets", "Exit", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionExit->setShortcut(QApplication::translate("Assets", "Esc", nullptr));
+#endif // QT_NO_SHORTCUT
+        actionNew_Scene->setText(QApplication::translate("Assets", "New Scene", nullptr));
+        actionExport_obj->setText(QApplication::translate("Assets", "OBJ File (.obj)", nullptr));
+        actionExport_ma->setText(QApplication::translate("Assets", "Maya File (.ma)", nullptr));
+        actionLoad_ma->setText(QApplication::translate("Assets", "Load", nullptr));
+        actionGL->setText(QApplication::translate("Assets", "GL", nullptr));
+        actionVectorized->setText(QApplication::translate("Assets", "Vectorized", nullptr));
+        actionExport_svg->setText(QApplication::translate("Assets", "SVG File (.svg)", nullptr));
+        actionSphere_Tracing_png->setText(QApplication::translate("Assets", "Sphere Tracing (.png)", nullptr));
         Objects_groupBox->setTitle(QString());
-#if QT_CONFIG(tooltip)
-        boxMesh->setToolTip(QCoreApplication::translate("Assets", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#ifndef QT_NO_TOOLTIP
+        boxMesh->setToolTip(QApplication::translate("Assets", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#5500ff;\">Callback #01</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic; color:#aa00ff;\">Create Eurographics 1996 Bear</span></p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-        boxMesh->setText(QCoreApplication::translate("Assets", "Box Mesh", nullptr));
-#if QT_CONFIG(tooltip)
-        resetcameraButton->setToolTip(QCoreApplication::translate("Assets", "<html><head/><body><p><span style=\" color:#5500ff;\">Callback #03</span></p><p><span style=\" font-style:italic; color:#aa00ff;\">Create Eurographics 1996 Bird</span></p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-        resetcameraButton->setText(QCoreApplication::translate("Assets", "Reset Camera", nullptr));
+#endif // QT_NO_TOOLTIP
+        boxMesh->setText(QApplication::translate("Assets", "Box Mesh", nullptr));
+#ifndef QT_NO_TOOLTIP
+        resetcameraButton->setToolTip(QApplication::translate("Assets", "<html><head/><body><p><span style=\" color:#5500ff;\">Callback #03</span></p><p><span style=\" font-style:italic; color:#aa00ff;\">Create Eurographics 1996 Bird</span></p></body></html>", nullptr));
+#endif // QT_NO_TOOLTIP
+        resetcameraButton->setText(QApplication::translate("Assets", "Reset Camera", nullptr));
         Parameters_groupBox->setTitle(QString());
-        groupBox_4->setTitle(QCoreApplication::translate("Assets", " Statistics", nullptr));
-        label_2->setText(QCoreApplication::translate("Assets", "Vertex", nullptr));
-        label_3->setText(QCoreApplication::translate("Assets", "Triangles", nullptr));
+        groupBox_4->setTitle(QApplication::translate("Assets", " Statistics", nullptr));
+        label_2->setText(QApplication::translate("Assets", "Vertex", nullptr));
+        label_3->setText(QApplication::translate("Assets", "Triangles", nullptr));
         lineEdit->setText(QString());
-        groupBox_13->setTitle(QCoreApplication::translate("Assets", "Shading", nullptr));
-        radioShadingButton_1->setText(QCoreApplication::translate("Assets", "Normal", nullptr));
-        wireframe->setText(QCoreApplication::translate("Assets", "Wireframe", nullptr));
-        menuFile->setTitle(QCoreApplication::translate("Assets", "File", nullptr));
+        groupBox_13->setTitle(QApplication::translate("Assets", "Shading", nullptr));
+        radioShadingButton_1->setText(QApplication::translate("Assets", "Normal", nullptr));
+        wireframe->setText(QApplication::translate("Assets", "Wireframe", nullptr));
+        menuFile->setTitle(QApplication::translate("Assets", "File", nullptr));
     } // retranslateUi
 
 };

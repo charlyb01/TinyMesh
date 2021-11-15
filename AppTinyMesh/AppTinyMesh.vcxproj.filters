@@ -99,6 +99,9 @@
     <ClInclude Include="Include\mathematics.h">
       <Filter>Include</Filter>
     </ClInclude>
+    <ClInclude Include="Include\ui-interface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\mesh.glsl">
