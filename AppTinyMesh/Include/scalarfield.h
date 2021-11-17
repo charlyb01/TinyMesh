@@ -33,6 +33,8 @@ public:
 
 	unsigned index(const unsigned, const unsigned) const;
 	Vector2 Gradient(const unsigned, const unsigned) const;
+
+	void exportPng(const QString& path = "Data/result.png") const;
 };
 
 /*!
