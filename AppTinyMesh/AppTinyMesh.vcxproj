@@ -101,6 +101,7 @@
     <ClCompile Include="Source\box.cpp" />
     <ClCompile Include="Source\camera.cpp" />
     <ClCompile Include="Source\evector.cpp" />
+    <ClCompile Include="Source\heightfield.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\mesh-widget.cpp" />
     <ClCompile Include="Source\mesh.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="Source\realtime-moc.cpp" />
     <ClCompile Include="Source\qtemainwindow.cpp" />
     <ClCompile Include="Source\ray.cpp" />
+    <ClCompile Include="Source\scalarfield.cpp" />
     <ClCompile Include="Source\shader-api.cpp" />
     <ClCompile Include="Source\triangle.cpp" />
   </ItemGroup>
@@ -155,10 +157,12 @@
     <ClInclude Include="Include\camera.h" />
     <ClInclude Include="Include\color.h" />
     <ClInclude Include="Include\evector.h" />
+    <ClInclude Include="Include\heightfield.h" />
     <ClInclude Include="Include\mathematics.h" />
     <ClInclude Include="Include\mesh.h" />
     <ClInclude Include="Include\meshcolor.h" />
     <ClInclude Include="Include\ray.h" />
+    <ClInclude Include="Include\scalarfield.h" />
     <ClInclude Include="Include\shader-api.h" />
     <ClInclude Include="Include\ui-interface.h" />
     <ClInclude Include="Include\vector2.h" />

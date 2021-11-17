@@ -38,6 +38,12 @@
     <ClCompile Include="Source\realtime-moc.cpp">
       <Filter>Interface</Filter>
     </ClCompile>
+    <ClCompile Include="Source\scalarfield.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\heightfield.cpp">
+      <Filter>Source\TP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Include\qte.h">
@@ -70,6 +76,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{8b50c486-7a12-4404-bb16-16855aee3d6d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\TP">
+      <UniqueIdentifier>{a326d7fb-7c51-451c-9a47-d1782cf00f33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\evector.h">
@@ -100,6 +109,15 @@
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="Include\ui-interface.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\scalarfield.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\vector2.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\heightfield.h">
       <Filter>Include</Filter>
     </ClInclude>
   </ItemGroup>
