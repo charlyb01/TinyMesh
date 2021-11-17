@@ -5,6 +5,8 @@
 
 #include <QtCore/QString>
 
+#include "vector2.h"
+
 // Class
 class Vector
 {
@@ -16,6 +18,7 @@ public:
 
   explicit Vector(double);
   explicit Vector(double, double, double);
+  explicit Vector(Vector2, double);
 
   // Access members
   double& operator[] (int);
@@ -122,6 +125,16 @@ inline Vector::Vector(double a, double b, double c)
   Vector::c[0] = a;
   Vector::c[1] = b;
   Vector::c[2] = c;
+}
+
+/*!
+\brief Create a vector with argument coordinates.
+*/
+inline Vector::Vector(Vector2 v, double a)
+{
+    c[0] = v[0];
+    c[1] = v[1];
+    c[2] = a;
 }
 
 //! Gets the i-th coordinate of vector.

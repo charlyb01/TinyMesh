@@ -161,6 +161,7 @@
     <ClInclude Include="Include\ray.h" />
     <ClInclude Include="Include\shader-api.h" />
     <ClInclude Include="Include\ui-interface.h" />
+    <ClInclude Include="Include\vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\mesh.glsl" />
