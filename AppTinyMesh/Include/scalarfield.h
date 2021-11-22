@@ -26,12 +26,17 @@ protected:
 
 public:
 	ScalarField(const Box& _domain) : domain(_domain) {}
+	ScalarField(const unsigned _nx, const unsigned _ny, const Box& _domain, const double value);
 
 	// Access members
 	double& operator[] (const unsigned);
 	double operator[] (const unsigned) const;
+	Vector2 getBounds() const;
+
+	void rescaleDomain();
 
 	unsigned index(const unsigned, const unsigned) const;
+	unsigned index(const Vector2&) const;
 	Vector2 Gradient(const unsigned, const unsigned) const;
 
 	void exportPng(const QString& path = "Data/result.png") const;
@@ -43,6 +48,11 @@ public:
 inline unsigned ScalarField::index(const unsigned i, const unsigned j) const
 {
 	return ny * i + j;
+}
+
+inline unsigned ScalarField::index(const Vector2& v) const
+{
+	return index(v[0], v[1]);
 }
 
 //! Gets the i-th coordinate of scalar field values.

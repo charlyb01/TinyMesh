@@ -2,7 +2,10 @@
 #define __HEIGHTFIELD__
 
 #include "scalarfield.h"
+#include "drainagetype.h"
+#include "neighborhood.h"
 #include "mesh.h"
+
 
 /**
 * @class Height Field Include/heightfield.h
@@ -23,6 +26,7 @@ public:
 	
 	void evaluateNormals();
 	ScalarField Slopes() const;
+	ScalarField DrainageArea(const unsigned K = 1, const DrainageType type = DrainageType::K_STEEPEST) const;
 };
 
 #endif

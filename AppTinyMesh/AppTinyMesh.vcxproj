@@ -107,6 +107,7 @@
     <ClCompile Include="Source\mesh.cpp" />
     <ClCompile Include="Source\meshcolor.cpp" />
     <ClCompile Include="Source\moc_qte.cpp" />
+    <ClCompile Include="Source\neighborhood.cpp" />
     <ClCompile Include="Source\realtime-moc.cpp" />
     <ClCompile Include="Source\qtemainwindow.cpp" />
     <ClCompile Include="Source\ray.cpp" />
@@ -156,11 +157,13 @@
     <ClInclude Include="Include\box.h" />
     <ClInclude Include="Include\camera.h" />
     <ClInclude Include="Include\color.h" />
+    <ClInclude Include="Include\drainagetype.h" />
     <ClInclude Include="Include\evector.h" />
     <ClInclude Include="Include\heightfield.h" />
     <ClInclude Include="Include\mathematics.h" />
     <ClInclude Include="Include\mesh.h" />
     <ClInclude Include="Include\meshcolor.h" />
+    <ClInclude Include="Include\neighborhood.h" />
     <ClInclude Include="Include\ray.h" />
     <ClInclude Include="Include\scalarfield.h" />
     <ClInclude Include="Include\shader-api.h" />

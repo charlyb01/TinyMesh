@@ -1,5 +1,7 @@
-#include "heightfield.h"
 #include <QtGui/qimage.h>
+#include <map>
+
+#include "heightfield.h"
 
 
 HeightField::HeightField(const QString& path, const Box& _domain)
@@ -95,5 +97,36 @@ ScalarField HeightField::Slopes() const
 		for (j = 0; j < ny; j++)
 			sf[index(i, j)] = Slope(i, j);
 
+	sf.rescaleDomain();
+	return sf;
+}
+
+ScalarField HeightField::DrainageArea(const unsigned K, const DrainageType type) const
+{
+	unsigned i, j, k;
+	ScalarField sf(*this);
+	std::multimap<double, Vector2> pts;
+	std::multimap<double, Vector2>::reverse_iterator rit;
+
+	for (i = 0; i < nx; i++)
+	{
+		for (j = 0; j < ny; j++)
+		{
+			k = index(i, j);
+			pts.insert(std::pair<double, Vector2>(values.at(k), Vector2(i, j)));
+			sf[k] = 1.;
+		}
+	}
+
+	for (rit = pts.rbegin(); rit != pts.rend(); rit++)
+	{
+		std::pair<double, Vector2> pt = *rit;
+
+		Neighborhood n(*this, pt.second[0], pt.second[1], K, type);
+		for (k = 0; k < 8; k++)
+			sf[index(pt.second + n.getOffset(k))] += n.quantityDh(k) * sf[index(pt.second)];
+	}
+
+	sf.rescaleDomain();
 	return sf;
 }

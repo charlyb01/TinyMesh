@@ -1,4 +1,5 @@
 #include "qte.h"
+#include "heightfield.h"
 
 MainWindow::MainWindow()
 {
@@ -45,7 +46,11 @@ void MainWindow::editingSceneRight(const Ray&)
 
 void MainWindow::BoxMeshExample()
 {
-	meshColor = MeshColor(Mesh(Box(1.0)));
+	HeightField h = HeightField("Data/island_heightmap.png", Box(Vector(-100, -100, -50), Vector(100, 100, -100)));
+	//h.DrainageArea(4, DrainageType::K_STEEPEST).exportPng();
+	h.Slopes().exportPng();
+	meshColor = MeshColor(h.getMesh());
+	//meshColor = MeshColor(Mesh(Box(1.0)));
 	UpdateGeometry();
 }
 
