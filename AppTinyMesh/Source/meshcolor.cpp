@@ -29,6 +29,17 @@ MeshColor::MeshColor(const Mesh& m) : Mesh(m)
 }
 
 /*!
+\brief Constructor from a Heightfield.
+\param h the base heightfield
+*/
+MeshColor::MeshColor(const HeightField& h) : Mesh(h.getMesh())
+{
+	colors.resize(vertices.size());
+	colors.fill(Color(1.0, 1.0, 1.0));
+	carray = varray;
+}
+
+/*!
 \brief Empty.
 */
 MeshColor::~MeshColor()

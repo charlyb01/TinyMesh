@@ -3,6 +3,7 @@
 
 #include "color.h"
 #include "mesh.h"
+#include "heightfield.h"
 
 class MeshColor : public Mesh
 {
@@ -13,6 +14,7 @@ protected:
 public:
 	explicit MeshColor();
 	explicit MeshColor(const Mesh&);
+	explicit MeshColor(const HeightField&);
 	explicit MeshColor(const Mesh&, const QVector<Color>&, const QVector<int>&);
 	~MeshColor();
 
