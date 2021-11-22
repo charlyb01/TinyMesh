@@ -11,7 +11,7 @@
 class HeightField : public ScalarField
 {
 private:
-	
+	std::vector<Vector> normals;
 
 public:
 	HeightField(const QString&, const Box&);
@@ -21,7 +21,7 @@ public:
 	Vector Normal(const unsigned, const unsigned) const;
 	double Slope(const unsigned, const unsigned) const;
 	
-	//ScalarField Normals() const;
+	void evaluateNormals();
 	ScalarField Slopes() const;
 };
 

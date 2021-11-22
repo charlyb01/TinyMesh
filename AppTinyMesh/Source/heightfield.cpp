@@ -21,6 +21,8 @@ HeightField::HeightField(const QString& path, const Box& _domain)
 	for (i = 0; i < nx; i++)
 		for (j = 0; j < ny; j++)
 			values.at(index(i, j)) = image.pixelColor(i, j).red() * zStep + domain[0][2];
+
+	evaluateNormals();
 }
 
 
@@ -73,6 +75,17 @@ double HeightField::Slope(const unsigned i, const unsigned j) const
 	return Norm(Gradient(i, j));
 }
 
+
+void HeightField::evaluateNormals()
+{
+	unsigned i, j;
+	normals.clear();
+	normals.reserve(nx * ny);
+
+	for (i = 0; i < nx; i++)
+		for (j = 0; j < ny; j++)
+			normals.push_back(Normal(i, j));
+}
 
 ScalarField HeightField::Slopes() const
 {
